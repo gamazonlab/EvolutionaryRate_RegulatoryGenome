@@ -5,3 +5,10 @@ Note:
 EvoStats_final2.txt has the same data as Supplementary Table 3 of the paper.
 
 FUNCTIONAL_CATEGORIES.txt contains enriched functional categories (shown in Figure 2A).
+
+Correlation_OutofSampleR2_EvoRate.txt contains the correlation between evolutionary rate and out-of-sample imputation R2 for gene expression. The out-of-sample R2 assumes local predictors and is derived from 10-fold cross validation within the PrediXcan framework applied to GTEx data. For a wide range of tissues, out-of-sample imputation accuracy is significantly correlated with evolutionary rate. In particular, this suggests that transcriptome-wide association analyses using local predictors in a range of tissues have significantly less power to detect disease associations for conserved genes than for fast-evolving genes.
+
+Reference:
+
+Evans P, Cox NJ, Gamazon ER. The regulatory genome constrains protein sequence evolution: Implications for the search for disease-associated genes.
+Gamazon ER, Wheeler HE, Shah KP, et al. A gene-based association method for mapping traits using reference transcriptome data. Nat Genet. 2015;47(9):1091‐1098. doi:10.1038/ng.3367
