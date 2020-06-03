@@ -6,11 +6,12 @@ The development of explanatory models of protein sequence evolution has broad im
 
 The regulatory genome constrains protein sequence evolution: Implications for the search for disease-associated genes
 
-Patrick Evans<sup>1</sup>, Nancy J. Cox<sup>1</sup>, Eric R. Gamazon<sup>1,2,3</sup>
+Patrick Evans<sup>1</sup>, Nancy J. Cox<sup>1</sup>, Eric R. Gamazon<sup>1,2,3,4</sup>
 
 <sup>1</sup>Division of Genetic Medicine, Vanderbilt University Medical Center, Nashville, TN 37232  
 <sup>2</sup>Data Science Institute, Vanderbilt University, Nashville, TN 37232  
 <sup>3</sup>Clare Hall, University of Cambridge, Cambridge, CB3 9AL, United Kingdom  
+<sup>3</sup>MRC Epidemiology Unit, University of Cambridge, Cambridge, CB3 9AL, United Kingdom  
 
 Questions:  
 
