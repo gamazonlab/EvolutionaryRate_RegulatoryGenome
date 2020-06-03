@@ -15,7 +15,6 @@ xlim(c(-2,18)) + geom_vline(xintercept = -log10(0.05/dim(mm)[1]), col="orange", 
 
 
 # Figure 5b
-
 r2 = read.table('j://3_BIOVU/getR2.sql.out', header=T)
 r2.muscle = subset(r2, r2$tissue=="Muscle-Skeletal")
 
@@ -24,19 +23,15 @@ xx = merge(r2.muscle, a, by.x=1, by.y=3)
 
 conserved = subset(xx, xx$Chimp_dN.dS<0.01)
 dim(conserved)
-
 fast = subset(xx, xx$Chimp_dN.dS>0.99)
 dim(fast)
-
 conserved.l = pwr.f2.test(u=1,v=999, conserved$R2/(1-conserved$R2), sig.level=0.05/dim(conserved)[1])
 fast.l = pwr.f2.test(u=1,v=999, fast$R2/(1-fast$R2), sig.level=0.05/dim(fast)[1])
 
 tmp.c = data.frame(conserved.l$power)
 colnames(tmp.c) = c("Power")
-
 tmp.f = data.frame(fast.l$power)
 colnames(tmp.f) = c("Power")
-
 erg = tmp.c
 erg$geneclass = 'Conserved'
 erg1 = tmp.f
@@ -44,6 +39,7 @@ erg1$geneclass = 'Fast-evolving'
 erg2 = rbind(erg, erg1)
 
 
+# Figure 5b
 f5.2 = ggplot(erg2, aes(x = geneclass, y = Power)) + geom_violin(trim = TRUE, aes(fill=geneclass)) + geom_boxplot(width = 0.05) +
   scale_fill_manual(values = c("#00AFBB", "#E7B800")) + 
   theme(legend.position = "none")+
