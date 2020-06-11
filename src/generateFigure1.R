@@ -3,7 +3,6 @@ setwd("c://Users/egamazon/Dropbox/Papers/SelectionExpression/Paper_v1/")
 setwd("dropbox_evolution_paper/")
 
 library(ggplot2)
-library(pheatmap)
 library(reshape)
 
 # devtools::install_github("thomasp85/patchwork")
@@ -38,11 +37,11 @@ fig1.a = ggplot(mdata, aes(variable, Tissue, fill= value)) +
 scale_fill_gradient(low="white", high="blue") +
   theme(text = element_text(size=15),axis.title=element_text( size=18), legend.title=element_text(size=22), panel.background = element_rect(fill="white", color="black"), panel.grid.major = element_line(color="white"), panel.grid.minor = element_line(color="white"), legend.key = element_rect(fill="white", size=.5, linetype="dotted"), plot.title = element_text( size=22)) +  
 theme(axis.text.x=element_text(angle=30,hjust=1)) +
-  scale_fill_gradient2() + labs(tag = "A") + xlab("Variable")
+  labs(tag = "A") + xlab("Variable")
 
 # Figure 1b
 corvals <- read.table("c://users/egamazon/Dropbox/Papers/SelectionExpression/Paper_v1/dropbox_evolution_paper/FinalSubmission/June2018/AllTissue_COV_results.txt", sep = "\t", header = TRUE)
-fig1.b = ggplot(corvals, aes(Spearman_rho_mean_dn_mouse, Spearman_rho_mean_dnds_chimp, col="dN mean")) + geom_point() + geom_point(aes(Spearman_rho_mean_dnds_mouse, Spearman_rho_mean_dnds_chimp, col="dN/dS mean")) + geom_point(aes(Spearman_rho_var_ds_mouse, Spearman_rho_mean_ds_chimp, col="dS mean")) + geom_point(aes(Spearman_rho_var.mean_dn_mouse, Spearman_rho_var.mean_dn_chimp, col="dN variance/mean")) + geom_point(aes(Spearman_rho_var.mean_dnds_mouse, Spearman_rho_var.mean_dnds_chimp, col="dN/dS variance/mean")) + geom_point(aes(Spearman_rho_var.mean_ds_mouse, Spearman_rho_var.mean_ds_chimp, col="dS variance/mean")) + theme(text = element_text(size=22),panel.background = element_rect(fill="white", color="black"), panel.grid.major = element_line(color="white"), panel.grid.minor = element_line(color="white"), legend.key = element_rect(fill="white", size=.5, linetype="dotted"),legend.title = element_text(size = 22), plot.title = element_text( size = 30)) + xlab(expression(paste("Spearman's ", rho, " (Mouse)", sep=""))) + ylab(expression(paste("Spearman's ", rho," (Chimp)", sep=""))) + scale_colour_manual(name= "Comparison", values = c("black", "red", "blue", "orange", "green", "violet")) +
+fig1.b = ggplot(corvals, aes(Spearman_rho_mean_dn_mouse, Spearman_rho_mean_dnds_chimp, col="dN mean")) + geom_point() + geom_point(aes(Spearman_rho_mean_dnds_mouse, Spearman_rho_mean_dnds_chimp, col="dN/dS mean")) + geom_point(aes(Spearman_rho_var_ds_mouse, Spearman_rho_mean_ds_chimp, col="dS mean")) + geom_point(aes(Spearman_rho_var.mean_dn_mouse, Spearman_rho_var.mean_dn_chimp, col="dN variance/mean")) + geom_point(aes(Spearman_rho_var.mean_dnds_mouse, Spearman_rho_var.mean_dnds_chimp, col="dN/dS variance/mean")) + geom_point(aes(Spearman_rho_var.mean_ds_mouse, Spearman_rho_var.mean_ds_chimp, col="dS variance/mean")) + theme(text = element_text(size=22),panel.background = element_rect(fill="white", color="black"), panel.grid.major = element_line(color="white"), panel.grid.minor = element_line(color="white"), legend.key = element_rect(fill="white", size=.5, linetype="dotted"),legend.title = element_text(size = 22), plot.title = element_text( size = 30)) + xlab(expression(paste("Spearman's ", rho, " (Mouse)", sep=""))) + ylab(expression(paste("Spearman's ", rho," (Chimp)", sep=""))) + scale_colour_manual(name= "Comparison", values = c("black", "red", "blue", "orange", "brown", "violet")) +
  labs(tag = "B") +
  theme(text = element_text(size=22),axis.title=element_text( size=18), panel.background = element_rect(fill="white", color="black"), panel.grid.major = element_line(color="white"), panel.grid.minor = element_line(color="white"), legend.key = element_rect(fill="white", size=.5, linetype="dotted"), plot.title = element_text( size = 30)) 
 
