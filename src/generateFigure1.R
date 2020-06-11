@@ -37,7 +37,7 @@ fig1.a = ggplot(mdata, aes(variable, Tissue, fill= value)) +
 scale_fill_gradient(low="white", high="blue") +
   theme(text = element_text(size=15),axis.title=element_text( size=18), legend.title=element_text(size=22), panel.background = element_rect(fill="white", color="black"), panel.grid.major = element_line(color="white"), panel.grid.minor = element_line(color="white"), legend.key = element_rect(fill="white", size=.5, linetype="dotted"), plot.title = element_text( size=22)) +  
 theme(axis.text.x=element_text(angle=30,hjust=1)) +
-  labs(tag = "A") + xlab("Variable")
+scale_fill_gradient2() +  labs(tag = "A") + xlab("Variable")
 
 # Figure 1b
 corvals <- read.table("c://users/egamazon/Dropbox/Papers/SelectionExpression/Paper_v1/dropbox_evolution_paper/FinalSubmission/June2018/AllTissue_COV_results.txt", sep = "\t", header = TRUE)
